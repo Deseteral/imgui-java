@@ -1,4 +1,5 @@
-# imgui-java 
+# imgui-java
+
 [![Github All Releases](https://img.shields.io/github/downloads/SpaiR/imgui-java/total.svg?logo=github)](https://github.com/SpaiR/imgui-java/releases)
 [![CI](https://github.com/SpaiR/imgui-java/actions/workflows/ci.yml/badge.svg)](https://github.com/SpaiR/imgui-java/actions/workflows/ci.yml)
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.spair/imgui-java-binding?logo=apache-maven)](https://search.maven.org/search?q=g:io.github.spair%20AND%20a:imgui-java-*)
@@ -11,10 +12,10 @@ JNI based binding for [Dear ImGui](https://github.com/ocornut/imgui) with no dep
 Read official [documentation](https://github.com/ocornut/imgui#usage) and [wiki](https://github.com/ocornut/imgui/wiki) to see how to work with Dear ImGui.
 Almost everything from C++ could be done in Java in the same way.
 
-Binding has an OpenGL renderer and a GLFW backend implementation, using a [LWJGL3](https://www.lwjgl.org/) library. Could be found in [imgui-lwjgl3](https://github.com/SpaiR/imgui-java/blob/v1.86.2/imgui-lwjgl3) module.<br>
+Binding has an OpenGL renderer and a GLFW backend implementation, using a [LWJGL3](https://www.lwjgl.org/) library. Could be found in [imgui-lwjgl3](https://github.com/SpaiR/imgui-java/blob/v1.86.3/imgui-lwjgl3) module.<br>
 They are recommended, yet optional to use. The advantage of Dear ImGui is a portability, so feel free to copy-paste classes or write your own implementations.<br>
 
-Additionally, there is an [imgui-app](https://github.com/SpaiR/imgui-java/blob/v1.86.2/imgui-app) module, which provides **a high abstraction layer**.<br>
+Additionally, there is an [imgui-app](https://github.com/SpaiR/imgui-java/blob/v1.86.3/imgui-app) module, which provides **a high abstraction layer**.<br>
 It hides all low-level stuff under one class to extend, so you can build your GUI application instantly.
 
 ### Features
@@ -39,12 +40,12 @@ _Make sure you have installed Java 8 or higher._
 You can try binding by yourself in three simple steps:
 
 ```
-git clone --branch v1.86.2 https://github.com/SpaiR/imgui-java.git
+git clone --branch v1.86.3 https://github.com/SpaiR/imgui-java.git
 cd imgui-java
 ./gradlew :example:run
 ```
 
-See [example](https://github.com/SpaiR/imgui-java/blob/v1.86.2/example) module to try other widgets in action.
+See [example](https://github.com/SpaiR/imgui-java/blob/v1.86.3/example) module to try other widgets in action.
 
 # How to Use
 **[ImGui in LWJGL YouTube video](https://youtu.be/Xq-eVcNtUbw)** by [GamesWithGabe](https://www.youtube.com/channel/UCQP4qSCj1eHMHisDDR4iPzw).<br>
@@ -53,7 +54,7 @@ You can use this video as a basic step-by-step tutorial. It shows how to integra
 Take a note, that integration itself is a very flexible process. It could be done in one way or another. If you just need a framework for your GUI - use **Application** module. Otherwise, if you need more control, the best way is not just to repeat steps, but to understand what each step does.
 
 ## Application
-If you don't care about OpenGL or other low-level stuff, then you can use application layer from [imgui-app](https://github.com/SpaiR/imgui-java/blob/v1.86.2/imgui-app) module.
+If you don't care about OpenGL or other low-level stuff, then you can use application layer from [imgui-app](https://github.com/SpaiR/imgui-java/blob/v1.86.3/imgui-app) module.
 It is a **one jar solution** which includes: GLFW, OpenGL and Dear ImGui itself. So you only need **one dependency** line or **one jar in classpath** to make everything to work. <ins>You don't need to add separate dependencies to LWJGL or native libraries, since they are already included.</ins><br>
 Application module is the best choice if everything you care is the GUI for your app.
 
@@ -94,7 +95,7 @@ repositories {
 }
 
 dependencies {
-    implementation "io.github.spair:imgui-java-app:1.86.2"
+    implementation "io.github.spair:imgui-java-app:1.86.3"
 }
 ```
 </details>
@@ -107,7 +108,7 @@ dependencies {
     <dependency>
         <groupId>io.github.spair</groupId>
         <artifactId>imgui-java-app</artifactId>
-        <version>1.86.2</version>
+        <version>1.86.3</version>
     </dependency>
 </dependencies>
 ```
@@ -127,7 +128,7 @@ If using Java 9 modules, you will need to require the `imgui.app` module.
 
 ## Binding
 Using binding without the wrapper requires to "attach" it to your application manually.
-You can refer to [imgui-app](https://github.com/SpaiR/imgui-java/blob/v1.86.2/imgui-app) module and see how things are done there.
+You can refer to [imgui-app](https://github.com/SpaiR/imgui-java/blob/v1.86.3/imgui-app) module and see how things are done there.
 
 ### Dependencies
 For simplicity, example of dependencies for Gradle/Maven only shows how to add natives for Windows.
@@ -137,7 +138,7 @@ Feel free to add other platforms.
 |----------------------------|---------|
 | imgui-java-natives-windows | Windows |
 | imgui-java-natives-linux   | Linux   |
-| imgui-java-natives-macos   | MacOS   |
+| imgui-java-natives-macos   | macOS   |
 
 Take a note, that you also need to add dependencies to [LWJGL](https://www.lwjgl.org/). Examples below shows how to do it as well.
 
@@ -150,8 +151,8 @@ repositories {
 }
 
 ext {
-    lwjglVersion = '3.3.0'
-    imguiVersion = '1.86.2'
+    lwjglVersion = '3.3.1'
+    imguiVersion = '1.86.3'
 }
 
 dependencies {
@@ -175,8 +176,8 @@ dependencies {
 
 ```
 <properties>
-    <lwjgl.version>3.3.0</lwjgl.version>
-    <imgui.java.version>1.86.2</imgui.java.version>
+    <lwjgl.version>3.3.1</lwjgl.version>
+    <imgui.java.version>1.86.3</imgui.java.version>
 </properties>
 
 <dependencyManagement>
@@ -255,27 +256,29 @@ dependencies {
 #### Java Module System
 If using Java 9 modules, imgui-java has Automatic Module Names:
 
-| Package            | Module        |
-|--------------------|---------------|
-| imgui-java-app     | imgui.app     |
-| imgui-java-binding | imgui.binding |
-| imgui-java-lwjgl3  | imgui.lwjgl3  |
-| imgui-java-natives | imgui.natives |
+| Package                    | Module                |
+|----------------------------|-----------------------|
+| imgui-java-app             | imgui.app             |
+| imgui-java-binding         | imgui.binding         |
+| imgui-java-lwjgl3          | imgui.lwjgl3          |
+| imgui-java-natives-windows | imgui.natives.windows |
+| imgui-java-natives-linux   | imgui.natives.linux   |
+| imgui-java-natives-macos   | imgui.natives.macos   |
 
 ## Extensions
-- [ImNodes](https://github.com/Nelarius/imnodes/tree/857cc860af05ac0f6a4039c2af33d982377b6cf4) | [Example](https://github.com/SpaiR/imgui-java/blob/v1.86.2/example/src/main/java/ExampleImNodes.java) <br>
+- [ImNodes](https://github.com/Nelarius/imnodes/tree/857cc860af05ac0f6a4039c2af33d982377b6cf4) | [Example](https://github.com/SpaiR/imgui-java/blob/v1.86.3/example/src/main/java/ExampleImNodes.java) <br>
   A small, dependency-free node editor for dear imgui. (A good choice for simple start.)
-- [imgui-node-editor](https://github.com/thedmd/imgui-node-editor/tree/687a72f940c76cf5064e13fe55fa0408c18fcbe4) | [Example](https://github.com/SpaiR/imgui-java/blob/v1.86.2/example/src/main/java/ExampleImGuiNodeEditor.java) <br>
+- [imgui-node-editor](https://github.com/thedmd/imgui-node-editor/tree/687a72f940c76cf5064e13fe55fa0408c18fcbe4) | [Example](https://github.com/SpaiR/imgui-java/blob/v1.86.3/example/src/main/java/ExampleImGuiNodeEditor.java) <br>
   Node Editor using ImGui. (A bit more complex than ImNodes, but has more features.)
-- [ImGuizmo](https://github.com/CedricGuillemet/ImGuizmo/tree/f7bbbe39971d9d45816417a70e9b53a0f698c56e) | [Example](https://github.com/SpaiR/imgui-java/blob/v1.86.2/example/src/main/java/ExampleImGuizmo.java) <br>
+- [ImGuizmo](https://github.com/CedricGuillemet/ImGuizmo/tree/f7bbbe39971d9d45816417a70e9b53a0f698c56e) | [Example](https://github.com/SpaiR/imgui-java/blob/v1.86.3/example/src/main/java/ExampleImGuizmo.java) <br>
   Immediate mode 3D gizmo for scene editing and other controls based on Dear Imgui.
-- [implot](https://github.com/epezent/implot/tree/555ff688a8134bc0c602123149abe9c17d577475) | [Example](https://github.com/SpaiR/imgui-java/blob/v1.86.2/example/src/main/java/ExampleImPlot.java) <br>
+- [implot](https://github.com/epezent/implot/tree/555ff688a8134bc0c602123149abe9c17d577475) | [Example](https://github.com/SpaiR/imgui-java/blob/v1.86.3/example/src/main/java/ExampleImPlot.java) <br>
   Advanced 2D Plotting for Dear ImGui.  
-- [ImGuiColorTextEdit](https://github.com/BalazsJako/ImGuiColorTextEdit/tree/0a88824f7de8d0bd11d8419066caa7d3469395c4) | [Example](https://github.com/SpaiR/imgui-java/blob/v1.86.2/example/src/main/java/ExampleImGuiColorTextEdit.java) <br>
+- [ImGuiColorTextEdit](https://github.com/BalazsJako/ImGuiColorTextEdit/tree/0a88824f7de8d0bd11d8419066caa7d3469395c4) | [Example](https://github.com/SpaiR/imgui-java/blob/v1.86.3/example/src/main/java/ExampleImGuiColorTextEdit.java) <br>
   Syntax highlighting text editor for ImGui.
-- [ImGuiFileDialog](https://github.com/aiekick/ImGuiFileDialog/tree/4d42dfba125cbd4780a90fbc5f75e7dfbae64060) | [Example](https://github.com/SpaiR/imgui-java/blob/v1.86.2/example/src/main/java/ExampleImGuiFileDialog.java) <br>
+- [ImGuiFileDialog](https://github.com/aiekick/ImGuiFileDialog/tree/4d42dfba125cbd4780a90fbc5f75e7dfbae64060) | [Example](https://github.com/SpaiR/imgui-java/blob/v1.86.3/example/src/main/java/ExampleImGuiFileDialog.java) <br>
   A file selection dialog built for ImGui.
-- [ImGui Club MemoryEditor](https://github.com/ocornut/imgui_club/tree/d4cd9896e15a03e92702a578586c3f91bbde01e8) | [Example](https://github.com/SpaiR/imgui-java/blob/v1.86.2/example/src/main/java/ExampleImGuiMemoryEditor.java) <br>
+- [ImGui Club MemoryEditor](https://github.com/ocornut/imgui_club/tree/d4cd9896e15a03e92702a578586c3f91bbde01e8) | [Example](https://github.com/SpaiR/imgui-java/blob/v1.86.3/example/src/main/java/ExampleImGuiMemoryEditor.java) <br>
   Memory editor and viewer for ImGui.
 
 ## Freetype
@@ -306,8 +309,8 @@ Don't forget to make clear for your Linux/Mac users, that they will need to inst
     }
     
     ext {
-        lwjglVersion = '3.3.0'
-        imguiVersion = '1.86.2'
+        lwjglVersion = '3.3.1'
+        imguiVersion = '1.86.3'
     }
     
     dependencies {
@@ -332,7 +335,7 @@ Don't forget to make clear for your Linux/Mac users, that they will need to inst
 |-------------------------------|---------|
 | imgui-java-natives-windows-ft | Windows |
 | imgui-java-natives-linux-ft   | Linux   |
-| imgui-java-natives-macos-ft   | MacOS   |
+| imgui-java-natives-macos-ft   | macOS   |
 
 # Binding Notice
 Binding was made with java usage in mind. Some places of the original library were adapted for that.<br>
@@ -362,7 +365,7 @@ Ensure you've downloaded git submodules. That could be achieved:
  - Build with: `./gradlew :imgui-binding:generateLibs -Denvs=linux -Dlocal`
  - Run with: `./gradlew :example:run -PlibPath=../imgui-binding/build/libsNative/linux64`
  
-### MacOS
+### macOS
  - Check dependencies from "Linux" section and make sure you have them installed.
  - Build with: `./gradlew :imgui-binding:generateLibs -Denvs=mac -Dlocal`
  - Run with: `./gradlew :example:run -PlibPath=../imgui-binding/build/libsNative/macosx64`
@@ -371,6 +374,11 @@ Ensure you've downloaded git submodules. That could be achieved:
 In `envs` parameter next values could be used `win`, `linux` or `mac`.<br>
 `-Dlocal` is optional and means that natives will be built under the `./imgui-binding/build/` folder. Otherwise `/tmp/imgui` folder will be used.
 On Windows always use local build.
+
+# Support
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P5BF17Q)
+
+You can support the project to motivate its further development.
 
 # License
 See the LICENSE file for license rights and limitations (Apache-2.0).
